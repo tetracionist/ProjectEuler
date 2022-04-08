@@ -38,3 +38,4 @@ def pandigitalSum(n):
  
         
     return sum(products)
+print(pandigitalSum('123456789'))
