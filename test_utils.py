@@ -6,7 +6,7 @@ from solutions.PandigitalProducts import pandigitalSum
 start_time = time()
 
 def test_problem_32():
-  print(pandigitalSum("123456789"))
+  assert pandigitalSum("123456789") == ${{ secrets.solution_32 }}
   
 print("pandigitalSum finished in --- %s seconds ---" % (time() - start_time))
     
