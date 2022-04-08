@@ -2,7 +2,7 @@
 import time
 
 # solution to https://projecteuler.net/problem=32
-from ProjecEuler.solutions.Pandigital-Products-32 import pandigitalSum
+from ProjecEuler.solutions.PandigitalProducts32 import pandigitalSum
 
 def test_problem_32:
   start_time = time.time()
