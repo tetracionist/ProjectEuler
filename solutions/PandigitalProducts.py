@@ -16,8 +16,6 @@ by definition, the largest pandigital number would look like 98654321
 
 '''
 from itertools import permutations
-import time
-start_time = time.time()
 
 def pandigitalSum(n):
     # create permutations of pandigital number
@@ -40,11 +38,3 @@ def pandigitalSum(n):
  
         
     return sum(products)
-
-print(pandigitalSum("123456789"))    
-     
-
-print("Process finished --- %s seconds ---" % (time.time() - start_time))
-
-
-
