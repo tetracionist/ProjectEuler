@@ -3,7 +3,7 @@ from time import time
 
 # solution to https://projecteuler.net/problem=32
 from solutions.PandigitalProducts import pandigitalSum
-start_time = time.time()
+start_time = time()
 
 def test_problem_32():
   print(pandigitalSum("123456789"))
