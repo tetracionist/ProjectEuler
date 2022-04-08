@@ -15,17 +15,36 @@ Find a way to select pairs of numbers and evaluate if the string of numbers is e
 by definition, the largest pandigital number would look like 98654321
 
 '''
-
-
+from itertools import permutations
+import time
+start_time = time.time()
 
 def pandigitalSum(n):
+    # create permutations of pandigital number
+    perms = list(permutations(n))
 
-    # create pandigital number based on digits
-    target = ''.join([str(i) for i in range(1, n+1, 1)])
+    #define a list to store the products
+    products = [] 
     
+    # with three digits there are six permutations we can make
+    # within the created tuple we can use the commas to make the expression and the equals
+    for perm in perms:
 
+        # create left-hand and right-hand sides of the equation
+        lhs_1 = int(str(perm[0])) * int(str(perm[1] + perm[2] + perm[3] + perm[4]))
+        lhs_2 = int(str(perm[0] + perm[1])) * int(str(perm[2] + perm[3] + perm[4]))
+        rhs = int(str(perm[5]) + str(perm[6]) + str(perm[7]) + str(perm[8]))
 
-pandigitalSum(5)
+        if (lhs_1 == rhs) or (lhs_2 == rhs) and rhs not in products:
+            products.append(rhs)
+ 
+        
+    return sum(products)
+
+print(pandigitalSum("123456789"))    
+     
+
+print("Process finished --- %s seconds ---" % (time.time() - start_time))
 
 
 
