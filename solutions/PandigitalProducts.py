@@ -29,8 +29,8 @@ def pandigitalSum(n):
     for perm in perms:
 
         # create left-hand and right-hand sides of the equation
-        lhs_1 = int(str(perm[0])) * int(str(''.join(perm[1:5])))
-        lhs_2 = int(str(''.join(perm[0:2]))) * int(str(''.join(perm[2:5])))
+        lhs_1 = int(perm[0]) * int(''.join(perm[1:5]))
+        lhs_2 = int(''.join(perm[0:2])) * int(''.join(perm[2:5]))
         rhs = int(''.join(perm[5:9]))
 
         if (lhs_1 == rhs) or (lhs_2 == rhs) and rhs not in products:
@@ -38,5 +38,4 @@ def pandigitalSum(n):
  
 
     return sum(products)
-
-print(pandigitalSum("123456789"))
+    
